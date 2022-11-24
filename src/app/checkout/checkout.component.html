@@ -1,0 +1,98 @@
+<section class="checkout-section spad">
+    <div class="container">
+        <form  class="checkout-form">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="checkout-content">
+                        <a class="content-btn">Click Here To Login</a>
+                    </div>
+                    <h4>Biiling Details</h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="fir">FullName<span>*</span></label>
+                            <input type="text" id="fir" value="{{customer.fullname}}">
+                        </div>
+                        
+                        <div class="col-lg-12">
+                            <label for="cun-name">CIN</label>
+                            <input type="text" id="cun-name" value="{{customer.cin}}">
+                        </div>
+                        <div class="col-lg-12">
+                            <label for="cun">City<span>*</span></label>
+                            <input type="text" id="cun" value="{{customer.city}}" >
+                        </div>
+                        <div class="col-lg-12">
+                            <label for="street">Address<span>*</span></label>
+                            <input type="text" id="street" class="street-first" value="{{customer.address}}">
+                            
+                        </div>
+                        <div class="col-lg-12">
+                            <label for="zip">Postcode / ZIP (optional)</label>
+                            <input type="text" id="zip">
+                        </div>
+                        
+                        <div class="col-lg-6">
+                            <label for="email">Email Address<span>*</span></label>
+                            <input type="text" id="email" value="{{customer.email}}">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="phone">Phone<span>*</span></label>
+                            <input type="text" id="phone" value="{{customer.phone}}">
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="create-item">
+                                <label for="acc-create">
+                                    Create an account?
+                                    <input type="checkbox" id="acc-create">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="checkout-content">
+                        <input type="text" placeholder="Enter Your Coupon Code">
+                    </div>
+                    <div class="place-order">
+                        <h4>Your Order</h4>
+                        <div class="order-total">
+                            <ul class="order-table">
+                                <li>Product <span>Total</span></li>
+                                <div *ngFor="let prod of items ">
+                                <li class="fw-normal">{{prod.reference}}<span>${{prod.price * prod.qte}}</span></li>
+                                </div>
+
+                                <li class="total-price">Total <span>${{gettotal()}}</span></li>
+                                <li class="total-price">Totalqte <span>${{gettotalQte()}}</span></li>
+
+                                gettotalQte
+                            </ul>
+                            <div class="payment-check">
+                                <div class="pc-item">
+                                    <label for="pc-check">
+                                        Cheque Payment
+                                        <input type="checkbox" id="pc-check">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="pc-item">
+                                    <label for="pc-paypal">
+                                        Paypal
+                                        <input type="checkbox" id="pc-paypal">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+    <div class="order-btn">
+        <button type="submit" class="site-btn place-btn" (click)="addorder()">Place Order</button>
+    </div>
+</section>

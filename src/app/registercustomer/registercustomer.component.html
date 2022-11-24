@@ -1,0 +1,66 @@
+<div class="register-login-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="register-form">
+                    <h2>Register</h2>
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <div class="group-input">
+                            <label for="username"> email address *</label>
+                            <input type="email"
+                            formControlName="email"
+                            id="username">
+                        </div>
+                        <div class="group-input">
+                            <label for="username">Fullname</label>
+                            <input type="text" 
+                            formControlName="fullname"
+                            id="username">
+                        </div>
+                        <div class="group-input">
+                            <label for="pass">Password </label>
+                            <input type="text"
+                            formControlName="password"
+                            id="pass">
+                        </div>
+                        <div class="group-input">
+                            <label for="username">Phone</label>
+                            <input type="number"
+                            formControlName="phone"
+                            id="username">
+                        </div>
+                        <div class="group-input">
+                            <label for="username">City</label>
+                            <input type="text"
+                            formControlName="city"
+                            id="username">
+                        </div>
+                        <div class="group-input">
+                            <label for="username">Cin</label>
+                            <input type="number"
+                            formControlName="cin"
+                            id="username">
+                        </div>
+                        <div class="group-input">
+                            <label for="username">Address</label>
+                            <input type="text"
+                            formControlName="address"
+                            id="username">
+                        </div>
+                        <div class="form-group">
+                            <input type="file"
+                            (change)="handleFileInput($event)" 
+                                name="photo"
+                                class="form-control form-control-user" id="exampleInputPassword" placeholder="file">
+                        </div>
+                        
+                        <button type="submit" class="site-btn register-btn">REGISTER</button>
+                    </form>
+                    <div class="switch-login">
+                        <a href="./login.html" class="or-login">Or Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
